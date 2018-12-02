@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1>Mission to Mars</h1>
+      <p>
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape new Data about Mars</a>
+      </p>
+
+      <div class="sigline">
+        <p>
+
+        </p>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Latest Mars news:</h2>
+          <h4>{{mars.news_date}}</h4>
+          <h4> {{ mars.news_title }}</h4>
+          <p> {{mars.summary}} </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 big_box">
+          <h2>Featured Image:</h2>
+          <img src="{{mars.featured_image}}" alt="Mars featured image" />
+        </div>
+
+        <div class="col-md-4">
+          <div class="row weather-box">
+            <div class="col-md-12">
+              <h3>Current weather on Mars:</h3>
+              <p>
+                {{mars.mars_weather}}
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <h3>Mars facts:</h3>
+            {{mars.mars_facts_table | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <!-- Removed hemisphere code -->
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>
